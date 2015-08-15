@@ -457,3 +457,78 @@ it('should convert a synchronously succeeding snippet followed by another one', 
         }
     );
 });
+
+it('should inject a fresh unexpected clone before a snippet with #freshExpect:true', function () {
+    expect(
+        fences(synchronousSuccessfulSnippet) + '\n' +
+        fences(synchronousThrowingSnippet, 'javascript#freshExpect:true'),
+        'to come out as',
+        function () {
+            function isPromise(obj) {
+                return obj && typeof obj.then === 'function';
+            }
+
+            var unexpected = require('unexpected');
+            unexpected.output.preferredWidth = 80;
+
+            describe('inline code', function () {
+                it('example #1', function () {
+                    var expect = unexpected.clone();
+                    var __returnValue1;
+                    example1: try {
+                        var foo = 'abc';
+                        expect(foo, 'to equal', 'abc');
+                    } catch (err) {
+                        return endOfExample1(err);
+                    }
+                    if (isPromise(__returnValue1)) {
+                        return __returnValue1.then(function () { endOfExample1(); }, endOfExample1);
+                    } else {
+                        return endOfExample1();
+                    }
+                    function endOfExample1(err) {
+                        if (err) {
+                            expect.fail(err);
+                        }
+                    }
+                });
+
+                it('example #2', function () {
+                    var expect = unexpected.clone();
+                    var __returnValue1;
+                    example1: try {
+                        var foo = 'abc';
+                        expect(foo, 'to equal', 'abc');
+                    } catch (err) {
+                        return endOfExample1(err);
+                    }
+                    if (isPromise(__returnValue1)) {
+                        return __returnValue1.then(function () { endOfExample1(); }, endOfExample1);
+                    } else {
+                        return endOfExample1();
+                    }
+                    function endOfExample1(err) {
+                        expect = unexpected.clone();
+                        var __returnValue2;
+                        example2: try {
+                            var bar = 'abc';
+                            expect(bar, 'to equal', 'def');
+                        } catch (err) {
+                            return endOfExample2(err);
+                        }
+                        if (isPromise(__returnValue2)) {
+                            return __returnValue2.then(function () { endOfExample2(); }, endOfExample2);
+                        } else {
+                            return endOfExample2();
+                        }
+                        function endOfExample2(err) {
+                            if (err) {
+                                expect.fail(err);
+                            }
+                        }
+                    }
+                });
+            });
+        }
+    );
+});
