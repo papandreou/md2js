@@ -77,7 +77,7 @@ it('should convert a returning snippet expected to be successful', function () {
                     }
                     function endOfExample1(err) {
                         if (err) {
-                            throw new Error('expected example 1 not to fail');
+                            expect.fail(err);
                         }
                     }
                 });
@@ -218,7 +218,7 @@ it('should convert a returning snippet expected to fail followed by another one'
                         }
                         function endOfExample2(err) {
                             if (err) {
-                                throw new Error('expected example 2 not to fail');
+                                expect.fail(err);
                             }
                         }
                     }
@@ -257,7 +257,7 @@ it('should convert non-returning snippet expected to be successful', function ()
                     }
                     function endOfExample1(err) {
                         if (err) {
-                            throw new Error('expected example 1 not to fail');
+                            expect.fail(err);
                         }
                     }
                 });
@@ -374,7 +374,7 @@ it('should convert a non-returning snippet expected to fail followed by another 
                         }
                         function endOfExample2(err) {
                             if (err) {
-                                throw new Error('expected example 2 not to fail');
+                                expect.fail(err);
                             }
                         }
                     }
@@ -414,7 +414,7 @@ it('should convert a synchronously succeeding snippet followed by another one', 
                     }
                     function endOfExample1(err) {
                         if (err) {
-                            throw new Error('expected example 1 not to fail');
+                            expect.fail(err);
                         }
                     }
                 });
@@ -448,7 +448,7 @@ it('should convert a synchronously succeeding snippet followed by another one', 
                         }
                         function endOfExample2(err) {
                             if (err) {
-                                throw new Error('expected example 2 not to fail');
+                                expect.fail(err);
                             }
                         }
                     }
