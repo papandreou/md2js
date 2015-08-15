@@ -1,0 +1,23 @@
+{
+  "name": "md2js",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "escodegen": "1.6.1",
+    "esprima": "2.5.0",
+    "magicpen-prism": "2.2.0"
+  },
+  "devDependencies": {
+    "unexpected": "9.5.0"
+  },
+  "directories": {
+    "test": "test",
+    "lib": "lib"
+  },
+  "description": "Run code snippets in markdown files and assert that they error with the correct message"
+}
