@@ -100,7 +100,7 @@ it('should convert a returning snippet expected to fail', function () {
             unexpected.output.preferredWidth = 80;
 
             describe('inline code', function () {
-                it('example #1 should fail', function () {
+                it('example #1 should fail with the correct error message', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -150,7 +150,7 @@ it('should convert a returning snippet expected to fail followed by another one'
             unexpected.output.preferredWidth = 80;
 
             describe('inline code', function () {
-                it('example #1 should fail', function () {
+                it('example #1 should fail with the correct error message', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -280,7 +280,7 @@ it('should convert a non-returning snippet expected to fail', function () {
             unexpected.output.preferredWidth = 80;
 
             describe('inline code', function () {
-                it('example #1 should fail', function () {
+                it('example #1 should fail with the correct error message', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -322,7 +322,7 @@ it('should convert a non-returning snippet expected to fail followed by another 
             unexpected.output.preferredWidth = 80;
 
             describe('inline code', function () {
-                it('example #1 should fail', function () {
+                it('example #1 should fail with the correct error message', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
