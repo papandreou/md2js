@@ -10,7 +10,8 @@
   "dependencies": {
     "escodegen": "1.6.1",
     "esprima": "2.5.0",
-    "magicpen-prism": "2.2.0"
+    "magicpen-prism": "2.2.0",
+    "source-map": "0.4.4"
   },
   "devDependencies": {
     "unexpected": "9.5.0"
