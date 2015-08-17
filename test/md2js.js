@@ -16,7 +16,7 @@ function codeToString(obj) {
 var expect = require('unexpected').clone()
     .use(require('magicpen-prism'))
     .addAssertion('to come out as', function (expect, subject, value) {
-        expect(codeToString(md2js(subject)), 'to equal', codeToString(value));
+        expect(codeToString(md2js(subject)).replace(/    var fileName = 'inline code'[\s\S]*$/, '}'), 'to equal', codeToString(value));
     });
 
 var synchronousSuccessfulSnippet =
