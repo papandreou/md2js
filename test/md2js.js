@@ -16,7 +16,7 @@ function codeToString(obj) {
 var expect = require('unexpected').clone()
     .use(require('magicpen-prism'))
     .addAssertion('to come out as', function (expect, subject, value) {
-        expect(codeToString(md2js(subject)).replace(/    var fileName = 'inline code'[\s\S]*$/, '}'), 'to equal', codeToString(value));
+        expect(codeToString(md2js(subject)).replace(/    var fileName = '<inline code>'[\s\S]*$/, '}'), 'to equal', codeToString(value));
     });
 
 var synchronousSuccessfulSnippet =
@@ -52,8 +52,8 @@ it('should convert a returning snippet expected to be successful', function () {
             var unexpected = require('unexpected');
             unexpected.output.preferredWidth = 80;
 
-            describe('inline code', function () {
-                it('example #1 should succeed', function () {
+            describe('<inline code>', function () {
+                it('example #1 (<inline code>:2:1) should succeed', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -99,8 +99,8 @@ it('should convert a returning snippet expected to fail', function () {
             var unexpected = require('unexpected');
             unexpected.output.preferredWidth = 80;
 
-            describe('inline code', function () {
-                it('example #1 should fail with the correct error message', function () {
+            describe('<inline code>', function () {
+                it('example #1 (<inline code>:2:1) should fail with the correct error message', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -149,8 +149,8 @@ it('should convert a returning snippet expected to fail followed by another one'
             var unexpected = require('unexpected');
             unexpected.output.preferredWidth = 80;
 
-            describe('inline code', function () {
-                it('example #1 should fail with the correct error message', function () {
+            describe('<inline code>', function () {
+                it('example #1 (<inline code>:2:1) should fail with the correct error message', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -181,7 +181,7 @@ it('should convert a returning snippet expected to fail followed by another one'
                     }
                 });
 
-                it('example #2 should succeed', function () {
+                it('example #2 (<inline code>:18:1) should succeed', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -240,8 +240,8 @@ it('should convert non-returning snippet expected to be successful', function ()
             var unexpected = require('unexpected');
             unexpected.output.preferredWidth = 80;
 
-            describe('inline code', function () {
-                it('example #1 should succeed', function () {
+            describe('<inline code>', function () {
+                it('example #1 (<inline code>:2:1) should succeed', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -279,8 +279,8 @@ it('should convert a non-returning snippet expected to fail', function () {
             var unexpected = require('unexpected');
             unexpected.output.preferredWidth = 80;
 
-            describe('inline code', function () {
-                it('example #1 should fail with the correct error message', function () {
+            describe('<inline code>', function () {
+                it('example #1 (<inline code>:2:1) should fail with the correct error message', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -321,8 +321,8 @@ it('should convert a non-returning snippet expected to fail followed by another 
             var unexpected = require('unexpected');
             unexpected.output.preferredWidth = 80;
 
-            describe('inline code', function () {
-                it('example #1 should fail with the correct error message', function () {
+            describe('<inline code>', function () {
+                it('example #1 (<inline code>:2:1) should fail with the correct error message', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -345,7 +345,7 @@ it('should convert a non-returning snippet expected to fail followed by another 
                     }
                 });
 
-                it('example #2 should succeed', function () {
+                it('example #2 (<inline code>:12:1) should succeed', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -397,8 +397,8 @@ it('should convert a synchronously succeeding snippet followed by another one', 
             var unexpected = require('unexpected');
             unexpected.output.preferredWidth = 80;
 
-            describe('inline code', function () {
-                it('example #1 should succeed', function () {
+            describe('<inline code>', function () {
+                it('example #1 (<inline code>:2:1) should succeed', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -419,7 +419,7 @@ it('should convert a synchronously succeeding snippet followed by another one', 
                     }
                 });
 
-                it('example #2 should succeed', function () {
+                it('example #2 (<inline code>:8:1) should succeed', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -471,8 +471,8 @@ it('should inject a fresh unexpected clone before a snippet with #freshExpect:tr
             var unexpected = require('unexpected');
             unexpected.output.preferredWidth = 80;
 
-            describe('inline code', function () {
-                it('example #1 should succeed', function () {
+            describe('<inline code>', function () {
+                it('example #1 (<inline code>:2:1) should succeed', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
@@ -493,7 +493,7 @@ it('should inject a fresh unexpected clone before a snippet with #freshExpect:tr
                     }
                 });
 
-                it('example #2 should succeed', function () {
+                it('example #2 (<inline code>:8:1) should succeed', function () {
                     var expect = unexpected.clone();
                     var __returnValue1;
                     example1: try {
